@@ -1,0 +1,83 @@
+
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background-color:rgb(191, 198, 198) ;
+  position: relative;
+  top: 6rem;
+  left: 0px;
+  width: 100%;
+  box-sizing: border-box;
+  
+   /* ou absolute ou fixed, dependendo do seu caso */
+  z-index: 1; 
+  
+  
+
+}
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 350px;
+    cursor: pointer;
+    background-color: rgb(109, 116, 123);
+    
+    
+    
+    
+  }
+
+  .label{
+    position: relative;
+    top: 3rem;
+  }
+
+  .img{
+    position: relative;
+    top: 0.2rem;
+   
+   
+  }
+
+  .labelNome{
+    position: relative;
+    top:-9rem;
+  }
+
+  .cartButton {
+    position: fixed;
+    bottom: 90px; /* Distância do botão até o fundo da página */
+    right: 70px; /* Distância do botão até a direita da página */
+    width: 80px; /* Largura do botão */
+    height: 80px; /* Altura do botão */
+    background-color: #535659; /* Cor de fundo do botão (pode ser ajustada) */
+    border-radius: 30%; /* Bordas arredondadas para criar um botão redondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999; /* Garante que o botão fique sempre acima de outros elementos */
+  }
+
+  .cartButton:hover{
+    background-color: #37393b;
+
+  }
+
+  
+
+  @media (max-width: 810px) {
+    .cartButton {
+      bottom: 40px; /* Distância do botão até o fundo da página */
+      right: 40px; /* Distância do botão até a direita da página */
+    }
+  
+  
+  }
+  

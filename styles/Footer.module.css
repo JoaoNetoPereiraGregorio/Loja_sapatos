@@ -1,0 +1,61 @@
+.footer {
+   
+    background-color: #333; 
+    justify-content: center;
+   align-items: center;
+    padding: 30px;
+    
+    margin-top: 96px;
+    margin-bottom: 0px;
+    display: flex;
+    
+    gap: 25%;
+   
+    width: 100%;
+    box-sizing: border-box;
+    bottom: 0px;
+   
+   
+    
+  }
+  
+  .contatos, .admin {
+    width: 20%;
+    text-align: center;
+     /* Distribui igualmente o espaço entre os dois blocos no rodapé */
+  }
+  
+  .contatos h3, .admin h3 {
+    margin-top: 10px;
+    color: #fff;
+  }
+
+  .contatos p{
+    color: #fff;
+  }
+  
+
+  .adminBotao {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0px;
+  }
+  
+  .adminBotao:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 810px) {
+    .footer{
+      flex-direction: column;
+    }
+
+    .contatos, .admin {
+      width: 60%;
+     
+       /* Distribui igualmente o espaço entre os dois blocos no rodapé */
+    }
+  }

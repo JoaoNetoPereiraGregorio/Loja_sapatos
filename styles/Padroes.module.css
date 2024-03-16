@@ -1,0 +1,112 @@
+.topnavbar {
+    display: flex;
+   
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+  
+    top:0px;
+    left: 0px;
+    position: fixed;
+    width: 100%;
+    height: 16.5%;
+    box-sizing: border-box;
+   
+    z-index: 2;
+  }
+  
+  .leftnav,
+  .logo,
+  .rightnav {
+    display: flex;
+    align-items: center;
+  }
+
+  
+
+  .leftnav{
+    flex: 1;
+    padding-left: 20%;
+  }
+
+  .rightnav{
+  
+    flex: 1;
+    padding-left: 10%;
+   
+  }
+
+  
+  
+  .homebutton,
+  .filterbutton {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .homebutton:hover,
+  .filterbutton:hover {
+    text-decoration: underline;
+  }
+  
+  .logo {
+    flex: 1;
+    text-align: center;
+  padding-left: 2rem;
+
+  }
+  
+  .logo img {
+    height: 90px;
+    width: 400px;
+   
+    
+  }
+
+
+  
+  
+  
+  @media (max-width: 810px) {
+    .topnavbar {
+      flex-direction: column;
+      align-items: center;
+      
+      
+    }
+
+
+    .leftnav,.rightnav,.logo{
+    justify-content: center; 
+    padding-left: 0%; 
+    }
+
+    .homebutton,
+  .filterbutton {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  
+    .leftnav,
+    .logo,
+    .rightnav {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+   
+
+    .logo img {
+        height: 50px;
+        width: 220px;  
+      }
+  }
