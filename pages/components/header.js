@@ -2,7 +2,7 @@
 import styles from '../../styles/Padroes.module.css';
 import React from 'react';
 import { useRouter } from 'next/router';
-import Footer from './footer';
+
 
 
 
@@ -11,7 +11,7 @@ const Padroes = () => {
 
 
   const handleClick = () => {
-    router.push(`/home`);
+    router.push(`/`);
   };
 
   const handleClickFiltro = () => {

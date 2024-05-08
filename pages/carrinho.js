@@ -1,7 +1,10 @@
 // pages/cart.js
 import React, { useState } from 'react';
 import CartItem from './components/CartItem';
-import Padroes from './components/header'
+import Padroes from './components/header';
+import NextButton from './components/botao';
+import styles from '../styles/Carrinho.module.css';
+import Footer from './components/footer';
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([
@@ -16,16 +19,27 @@ const CartPage = () => {
   };
 
   const handleCheckout = () => {
-    alert(`Compra finalizada! Total: R$ ${totalPrice.toFixed(2)}`);
-    // Adicione a lógica para redirecionar para a página de checkout
+    alert(`Você será redirecionado para o WhatsApp para finalizar sua compra! Total: R$ ${totalPrice.toFixed(2)}`);
+    const numeroTelefone = '62993726328'; // Número de telefone para o qual você quer enviar a mensagem
+    const mensagem = 'Ola esse e um teste!'; // Mensagem que você quer enviar
+    let url="";
+    if (window.innerWidth < 600) {
+      // Se o dispositivo for móvel, abre o WhatsApp com o protocolo wa.me
+      url = `https://wa.me/${numeroTelefone}?text=${encodeURIComponent(mensagem)}`;
+    } else {
+      // Se não for móvel, abre o WhatsApp Desktop com o protocolo web.whatsapp.com
+      url = `https://web.whatsapp.com/send?phone=${numeroTelefone}&text=${encodeURIComponent(mensagem)}`;
+    }
+    window.open(url, '_blank');
+
   };
 
   return (
-    
-    <div>
+
+    <div className={styles.container}>
       <Padroes />
-      <h1>Carrinho de Compras</h1>
-      <div>
+      <h1 className={styles.texto}>Carrinho</h1>
+      <div className={styles.itens} >
         {cartItems.map(item => (
           <CartItem
             key={item.id}
@@ -35,9 +49,13 @@ const CartPage = () => {
           />
         ))}
       </div>
-      <p>Total: R$ {totalPrice.toFixed(2)}</p>
-      <button onClick={handleCheckout}>Finalizar Compra</button>
+      <p className={styles.texto}>Total: R$ {totalPrice.toFixed(2)}</p>
+      <NextButton onClick={handleCheckout} buttonText="Finalizar Compra" />
+
+
+      <Footer />
     </div>
+
   );
 };
 
