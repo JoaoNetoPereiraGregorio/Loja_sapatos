@@ -16,6 +16,7 @@
   z-index: 1; 
   
   
+  
 
 }
   
@@ -76,6 +77,18 @@
     
   }
 
+  .divCarregando{
+    
+    width: 200%;
+    height: 600px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    padding-top: 65%;
+    
+  }
+
   
 
   @media (max-width: 810px) {
@@ -84,6 +97,12 @@
       right: 40px; /* Distância do botão até a direita da página */
     }
   
+    .divCarregando{
+    
+      width: 100%;
+    
+      
+    }
   
   }
   

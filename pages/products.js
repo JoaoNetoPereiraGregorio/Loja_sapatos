@@ -10,8 +10,9 @@ import { useState, useEffect } from 'react';
 const ProductCard = ({ product }) => {
   const router = useRouter();
 
+  const productJson = JSON.stringify(product);
   const handleClick = () => {
-    router.push(`/product?id=${product.id}`);
+    router.push(`/product?produto=${productJson}`);
 
 
 
@@ -25,7 +26,7 @@ const ProductCard = ({ product }) => {
       <img src={product.image} alt={product.name} className={styles.imagemProduto} />
 
       <h2>{product.name}</h2>
-      <h2>{product.price}</h2>
+      <h2>R$ {product.price}</h2>
 
 
     </div>
@@ -38,6 +39,8 @@ const ProductCard = ({ product }) => {
 const Products = () => {
 
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,6 +55,7 @@ const Products = () => {
         const data = await response.json();
         if (response.ok && Array.isArray(data.products)) { // Verifica se a resposta é um array
           setProducts(data.products);
+          setIsLoading(false);
 
         } else {
           alert("Erro ao buscar dados contate o administrador!")
@@ -78,14 +82,17 @@ const Products = () => {
 
     <div className={styles.container}>
 
+      {isLoading ? (
+        <div className={styles.divCarregando}>Carregando produtos...</div> // Exibe uma mensagem enquanto os produtos estão sendo carregados
+      ) : (
+        <>
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
 
-      {
-        products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-
-        ))
-      }
-
+          ))
+          }
+        </>
+      )}
 
 
       <div className={styles.cartButton} onClick={carrinho}>

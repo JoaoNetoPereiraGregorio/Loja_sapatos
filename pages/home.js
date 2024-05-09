@@ -17,7 +17,7 @@ const Home = () => {
 
         <div className={styles.container}>
             <Header />
-<Products />
+            <Products />
 
             <Footer />
         </div>

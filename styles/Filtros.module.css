@@ -1,0 +1,75 @@
+.container {
+    background-color: rgb(191, 198, 198);
+    margin-left: -7.9px;
+    margin-right: -7.9px;
+    margin-top: 129px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.filtros {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.filtroCard {
+    cursor: pointer;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.filtroCard :hover {
+    text-decoration: underline;
+}
+
+.divCarregando {
+
+    width: 100%;
+    height: 300px;
+   
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    padding-top: 20%;
+
+}
+
+.divInput{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+   
+}
+
+.pesquisa{
+    width: 40%;
+    background-color: rgb(191, 198, 198);
+    margin-top: 15px;
+    height: 30px;
+    border-radius: 10px;
+    
+}
+
+@media (max-width: 810px) {
+    .container {
+        margin-top: 110px;
+    }
+
+    .divCarregando {
+
+        padding-top: 65%;
+
+
+    }
+
+    .pesquisa{
+        width: 50%;
+       
+        
+    }
+
+}

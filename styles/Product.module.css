@@ -54,6 +54,21 @@
   font-weight: bolder;
 }
 
+.cartButton {
+  position: fixed;
+  bottom: 90px; /* Distância do botão até o fundo da página */
+  right: 70px; /* Distância do botão até a direita da página */
+  width: 80px; /* Largura do botão */
+  height: 80px; /* Altura do botão */
+  background-color: #535659; /* Cor de fundo do botão (pode ser ajustada) */
+  border-radius: 30%; /* Bordas arredondadas para criar um botão redondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 999; /* Garante que o botão fique sempre acima de outros elementos */
+}
+
 @media (max-width: 810px) {
   .imagemTexto {
     flex-direction: column;
@@ -66,6 +81,11 @@
 
   .name {
     font-size: 40px;
+  }
+
+  .cartButton {
+    bottom: 40px; /* Distância do botão até o fundo da página */
+    right: 40px; /* Distância do botão até a direita da página */
   }
 
 }

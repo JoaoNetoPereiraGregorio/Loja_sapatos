@@ -11,7 +11,7 @@ const Footer = () => {
 
 
   const handleClick = () => {
-    router.push(`/products`);
+    router.push(`/loginAdm`);
   };
 
 

@@ -6,7 +6,7 @@ import styles from '../../styles/Carrinho.module.css';
 const CartItem = ({ product, price, onRemove }) => {
   return (
     <div  className={styles.card}>
-      <p>{product} - R$ {price.toFixed(2)}</p>
+      <p>{product} - R$ {price}</p>
       <NextButton  onClick={onRemove} buttonText="Remover" />
 
       
