@@ -3,20 +3,9 @@ import { useRouter } from 'next/router';
 import styles from '../styles/Filtros.module.css';
 import Padroes from './components/header';
 import Footer from './components/footer';
+import FiltrosCard from './components/filtrosCard';
 
-const FiltrosCard = ({ product }) => {
-    const router = useRouter();
 
-    const handleClick = () => {
-        router.push(`/product?produto=${JSON.stringify(product)}`);
-    };
-
-    return (
-        <div className={styles.filtroCard} onClick={handleClick}>
-            <p>{product.name}</p>
-        </div>
-    );
-};
 
 const Filtros = () => {
     const [products, setProducts] = useState([]);
@@ -69,12 +58,12 @@ const Filtros = () => {
         <div className={styles.container}>
             <Padroes />
             <div className={styles.divInput}>
-            <input className={styles.pesquisa}
-                type="text"
-                value={inputValue}
-                onChange={handleInputChange}
-                placeholder="Pesquisar..."
-            />
+                <input className={styles.pesquisa}
+                    type="text"
+                    value={inputValue}
+                    onChange={handleInputChange}
+                    placeholder="Pesquisar..."
+                />
             </div>
             <div className={styles.filtros}>
                 {isLoading ? (
